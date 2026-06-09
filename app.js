@@ -11,7 +11,10 @@ function login(){
         return;
     }
 
-    localStorage.setItem("veritasUser", email);
+    localStorage.setItem(
+        "veritasUser",
+        email
+    );
 
     window.location.href =
         "dashboard.html";
@@ -19,8 +22,66 @@ function login(){
 
 function logout(){
 
-    localStorage.removeItem("veritasUser");
+    localStorage.removeItem(
+        "veritasUser"
+    );
 
     window.location.href =
         "login.html";
+}
+
+function askAI(){
+
+    let question =
+        document.getElementById("question").value;
+
+    let chat =
+        document.getElementById("chatBox");
+
+    if(question === ""){
+        return;
+    }
+
+    chat.innerHTML += `
+        <div class="message user">
+            ${question}
+        </div>
+    `;
+
+    let response =
+        generateResponse(question);
+
+    setTimeout(() => {
+
+        chat.innerHTML += `
+            <div class="message ai">
+                ${response}
+            </div>
+        `;
+
+        chat.scrollTop =
+            chat.scrollHeight;
+
+    },500);
+
+    document.getElementById(
+        "question"
+    ).value = "";
+}
+
+function generateResponse(question){
+
+    question =
+        question.toLowerCase();
+
+    if(question.includes("sales"))
+        return "Sales appear healthy with positive growth trends.";
+
+    if(question.includes("customer"))
+        return "Customer retention risk detected in some segments.";
+
+    if(question.includes("revenue"))
+        return "Revenue growth is currently stable.";
+
+    return "Veritas AI is analyzing your business data.";
 }
