@@ -7,42 +7,112 @@
 
 <body>
 
-<nav>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="#" onclick="logout()">Logout</a>
-</nav>
+<div class="layout">
 
-<div class="container">
+    <aside class="sidebar">
 
-    <h1>Veritas Dashboard</h1>
+        <h2>VERITAS</h2>
 
-    <div class="card">
-        <h2>Company Health</h2>
-        <p>AI Insights will appear here.</p>
-    </div>
+        <ul>
+            <li>Dashboard</li>
+            <li>Datasets</li>
+            <li>AI Reports</li>
+            <li>Data Genome</li>
+            <li>Settings</li>
+        </ul>
 
-    <div class="card">
-        <h2>Data Upload</h2>
-
-        <input type="file">
-
-        <button>
-            Upload Dataset
-        </button>
-    </div>
-
-    <div class="card">
-
-        <h2>Ask Veritas AI</h2>
-
-        <input
-            placeholder="Ask a business question">
-
-        <button>
-            Ask
+        <button onclick="logout()">
+            Logout
         </button>
 
-    </div>
+    </aside>
+
+    <main class="main">
+
+        <h1>AI Business Intelligence Center</h1>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Revenue Health</h3>
+                <h2>$24,500</h2>
+                <p>+12% Growth</p>
+            </div>
+
+            <div class="card">
+                <h3>Customer Risk</h3>
+                <h2>14%</h2>
+                <p>Medium Risk</p>
+            </div>
+
+            <div class="card">
+                <h3>Infrastructure Status</h3>
+                <h2>Healthy</h2>
+                <p>All Systems Online</p>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Company Profile</h2>
+
+            <input
+                placeholder="Company Name">
+
+            <input
+                placeholder="Industry">
+
+            <button>
+                Save Profile
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Dataset Manager</h2>
+
+            <input type="file">
+
+            <button>
+                Upload Dataset
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Data Genome™</h2>
+
+            <p>Customers Connected</p>
+            <progress value="70" max="100"></progress>
+
+            <p>Products Connected</p>
+            <progress value="60" max="100"></progress>
+
+            <p>Operations Connected</p>
+            <progress value="45" max="100"></progress>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Ask Veritas AI</h2>
+
+            <div id="chatBox"></div>
+
+            <input
+                id="question"
+                placeholder="Ask a business question">
+
+            <button onclick="askAI()">
+                Ask
+            </button>
+
+        </div>
+
+    </main>
 
 </div>
 
