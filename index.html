@@ -2,109 +2,34 @@
 <html>
 <head>
     <title>Veritas AI</title>
-
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            background:#0f172a;
-            color:white;
-            margin:0;
-        }
-
-        header{
-            padding:20px;
-            text-align:center;
-            background:#1e293b;
-        }
-
-        .container{
-            width:90%;
-            max-width:1000px;
-            margin:auto;
-            padding:20px;
-        }
-
-        .card{
-            background:#1e293b;
-            padding:20px;
-            border-radius:10px;
-            margin-top:20px;
-        }
-
-        input,button{
-            padding:10px;
-            margin-top:10px;
-        }
-
-        button{
-            cursor:pointer;
-        }
-
-        #chat{
-            margin-top:20px;
-            min-height:200px;
-        }
-
-        .message{
-            padding:10px;
-            margin:10px 0;
-            border-radius:8px;
-        }
-
-        .user{
-            background:#2563eb;
-        }
-
-        .ai{
-            background:#334155;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Veritas AI</h1>
-    <p>AI-Powered Data Intelligence Platform</p>
-</header>
-
 <div class="container">
 
     <div class="card">
-        <h2>Upload Dataset</h2>
 
-        <input type="file" id="dataset">
+        <h1>Veritas AI</h1>
 
-        <br>
+        <p>
+            AI-Powered Data Intelligence
+            Infrastructure
+        </p>
 
-        <button onclick="uploadData()">
-            Upload
-        </button>
-
-        <p id="uploadStatus"></p>
-    </div>
-
-    <div class="card">
-
-        <h2>Ask Veritas</h2>
-
-        <input
-            type="text"
-            id="question"
-            placeholder="Ask about your data..."
-            style="width:80%;"
-        >
-
-        <button onclick="askAI()">
-            Ask
-        </button>
-
-        <div id="chat"></div>
+        <a href="login.html">
+            <button>
+                Get Started
+            </button>
+        </a>
 
     </div>
 
 </div>
 
+</body>
+</html>
 <script>
 
 function uploadData(){
@@ -151,35 +76,6 @@ function askAI(){
 }
 
 </script>
-    <!DOCTYPE html>
-<html>
-<head>
-    <title>Veritas AI</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="container">
-
-    <div class="card">
-
-        <h1>Veritas AI</h1>
-
-        <p>
-            AI-Powered Data Intelligence
-            Infrastructure
-        </p>
-
-        <a href="login.html">
-            <button>
-                Get Started
-            </button>
-        </a>
-
-    </div>
-
-</div>
 
 </body>
 </html>
