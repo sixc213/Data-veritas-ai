@@ -1,36 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Veritas Login</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+async function login(){
 
-<body>
+    const email =
+        document.getElementById("email").value;
 
-<div class="container">
+    const password =
+        document.getElementById("password").value;
 
-    <div class="card">
+    const { data, error } =
+        await supabaseClient.auth.signInWithPassword({
+            email,
+            password
+        });
 
-        <h1>Login to Veritas</h1>
+    if(error){
+        alert(error.message);
+        return;
+    }
 
-        <input
-            id="email"
-            placeholder="Email">
-
-        <input
-            id="password"
-            type="password"
-            placeholder="Password">
-
-        <button onclick="login()">
-            Login
-        </button>
-
-    </div>
-
-</div>
-
-<script src="app.js"></script>
-
-</body>
-</html>
+    window.location.href =
+        "dashboard.html";
+}
