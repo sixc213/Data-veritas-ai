@@ -1,29 +1,42 @@
-async function login(){
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Veritas Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    const email =
-        document.getElementById("email").value;
+<body>
 
-    const password =
-        document.getElementById("password").value;
+<div class="container">
 
-    const { data, error } =
-        await supabaseClient.auth.signInWithPassword({
-            email,
-            password
-        });
+    <div class="card">
 
-    if(error){
-        alert(error.message);
-        return;
-    }
+        <h1>Login to Veritas</h1>
 
-    window.location.href =
-        "dashboard.html";
-}
-<button onclick="login()">
-Login
-</button>
+        <input
+            id="email"
+            placeholder="Email">
 
-<button onclick="signup()">
-Create Account
-</button>
+        <input
+            id="password"
+            type="password"
+            placeholder="Password">
+
+        <button onclick="login()">
+            Login
+        </button>
+
+        <button onclick="signup()">
+            Create Account
+        </button>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="supabase.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
