@@ -108,3 +108,34 @@ async function signup() {
         "Account created successfully!"
     );
 }
+async function uploadDataset(){
+
+    const fileInput =
+        document.getElementById("datasetFile");
+
+    const file =
+        fileInput.files[0];
+
+    if(!file){
+        alert("Please select a file");
+        return;
+    }
+
+    const filename =
+        Date.now() + "_" + file.name;
+
+    const { data, error } =
+        await supabaseClient
+            .storage
+            .from("datasets")
+            .upload(filename, file);
+
+    if(error){
+        alert(error.message);
+        return;
+    }
+
+    alert("Dataset uploaded successfully!");
+
+    loadDatasets();
+}
