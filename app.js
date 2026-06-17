@@ -178,3 +178,10 @@ window.onload = function(){
     }
 
 };
+await supabaseClient
+.from("datasets")
+.insert([
+{
+    filename: filename
+}
+]);
