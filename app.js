@@ -139,3 +139,42 @@ async function uploadDataset(){
 
     loadDatasets();
 }
+async function loadDatasets(){
+
+    const { data, error } =
+        await supabaseClient
+            .storage
+            .from("datasets")
+            .list();
+
+    if(error){
+        console.log(error);
+        return;
+    }
+
+    let html = "";
+
+    data.forEach(file => {
+
+        html += `
+            <div class="card">
+                📁 ${file.name}
+            </div>
+        `;
+    });
+
+    document.getElementById(
+        "datasetList"
+    ).innerHTML = html;
+}
+window.onload = function(){
+
+    if(typeof loadDatasets === "function"){
+        loadDatasets();
+    }
+
+    if(typeof loadCompanyProfile === "function"){
+        loadCompanyProfile();
+    }
+
+};
